@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Change background color here */
+    }
+    .dashboard-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>Welcome to the Dashboard</h2>
+    <p>This is the dashboard for <span id="usernameDisplay"></span>.</p>
+  </div>
+
+  <script>
+    // Extract username from URL query parameter
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const username = urlParams.get('username');
+
+    // Display username on the dashboard
+    const usernameDisplay = document.getElementById('usernameDisplay');
+    if (username) {
+      usernameDisplay.textContent = username;
+    }
+  </script>
+</body>
+</html>
